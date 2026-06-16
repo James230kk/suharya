@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>اختيار عشوائي للنكات</title>
+  <title>اختيار نكهات مختلفة</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,62 +12,12 @@
     h1 {
       text-align: center;
     }
-    .person {
-      background: #fff;
-      padding: 15px;
-      margin: 10px 0;
-      border-radius: 8px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    }
-    .person h2 {
-      margin-top: 0;
-    }
     button {
       margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
+      padding: 12px;
+      font-size: 18px;
       cursor: pointer;
       width: 100%;
     }
     #result {
-      margin-top: 20px;
-      background: #e8ffe8;
-      padding: 15px;
-      border-radius: 8px;
-      display: none;
-      font-size: 18px;
-      line-height: 1.8;
-    }
-  </style>
-</head>
-<body>
-
-  <h1>اختيار عشوائي للنكات</h1>
-
-  <button onclick="randomize()">اختيار عشوائي</button>
-
-  <div id="result"></div>
-
-  <script>
-    const flavors = ["حامض", "حار", "حلو"];
-
-    function randomFlavor() {
-      return flavors[Math.floor(Math.random() * flavors.length)];
-    }
-
-    function randomize() {
-      const mozn = randomFlavor();
-      const mohammed = randomFlavor();
-      const elyan = randomFlavor();
-
-      const resultDiv = document.getElementById("result");
-      resultDiv.style.display = "block";
-      resultDiv.innerHTML =
-        "اختيار محمد: " + mohammed + "<br>" +
-        "اختيار مزن: " + mozn + "<br>" +
-        "اختيار اليان: " + elyan;
-    }
-  </script>
-
-</body>
-</html>
+      margin-top
