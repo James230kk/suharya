@@ -1,9 +1,8 @@
-```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>اختيار حامض أو حار أو حلو</title>
+  <title>اختيار عشوائي للنكات</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -20,119 +19,39 @@
       border-radius: 8px;
       box-shadow: 0 0 5px rgba(0,0,0,0.1);
     }
-    .person h2 {
-      margin-top: 0;
-    }
-    .options {
-      margin-top: 10px;
-    }
-    .options label {
-      margin-left: 15px;
-      cursor: pointer;
-    }
-    button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-    }
     #result {
       margin-top: 20px;
       background: #e8ffe8;
       padding: 15px;
       border-radius: 8px;
       display: none;
+      font-size: 18px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      font-size: 18px;
+      cursor: pointer;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
   </style>
 </head>
 <body>
 
-  <h1>اختيار النكهة لكل شخصية</h1>
+  <h1>اختيار عشوائي للنكات</h1>
 
-  <!-- مزن -->
-  <div class="person">
-    <h2>مزن</h2>
-    <div class="options">
-      <label>
-        <input type="radio" name="mozn" value="حامض" />
-        حامض
-      </label>
-      <label>
-        <input type="radio" name="mozn" value="حار" />
-        حار
-      </label>
-      <label>
-        <input type="radio" name="mozn" value="حلو" />
-        حلو
-      </label>
-    </div>
-  </div>
-
-  <!-- محمد -->
-  <div class="person">
-    <h2>محمد</h2>
-    <div class="options">
-      <label>
-        <input type="radio" name="mohammed" value="حامض" />
-        حامض
-      </label>
-      <label>
-        <input type="radio" name="mohammed" value="حار" />
-        حار
-      </label>
-      <label>
-        <input type="radio" name="mohammed" value="حلو" />
-        حلو
-      </label>
-    </div>
-  </div>
-
-  <!-- اليان -->
-  <div class="person">
-    <h2>اليان</h2>
-    <div class="options">
-      <label>
-        <input type="radio" name="elyan" value="حامض" />
-        حامض
-      </label>
-      <label>
-        <input type="radio" name="elyan" value="حار" />
-        حار
-      </label>
-      <label>
-        <input type="radio" name="elyan" value="حلو" />
-        حلو
-      </label>
-    </div>
-  </div>
-
-  <button onclick="showResult()">عرض الاختيارات</button>
+  <button onclick="randomPick()">اختيار عشوائي</button>
 
   <div id="result"></div>
 
   <script>
-    function getChoice(name) {
-      const radios = document.getElementsByName(name);
-      for (let r of radios) {
-        if (r.checked) return r.value;
-      }
-      return "لم يتم الاختيار";
-    }
+    const flavors = ["حامض", "حار", "حلو"];
 
-    function showResult() {
-      const mozn = getChoice("mozn");
-      const mohammed = getChoice("mohammed");
-      const elyan = getChoice("elyan");
+    function randomPick() {
+      const mozn = flavors[Math.floor(Math.random() * flavors.length)];
+      const mohammed = flavors[Math.floor(Math.random() * flavors.length)];
+      const elyan = flavors[Math.floor(Math.random() * flavors.length)];
 
-      const resultDiv = document.getElementById("result");
-      resultDiv.style.display = "block";
-      resultDiv.innerHTML =
-        "اختيار مزن: " + mozn + "<br>" +
-        "اختيار محمد: " + mohammed + "<br>" +
-        "اختيار اليان: " + elyan;
-    }
-  </script>
-
-</body>
-</html>
-```
+      const
