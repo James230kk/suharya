@@ -20,4 +20,50 @@
       width: 100%;
     }
     #result {
-      margin-top
+      margin-top: 20px;
+      background: #e8ffe8;
+      padding: 15px;
+      border-radius: 8px;
+      display: none;
+      font-size: 20px;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>اختيار نكهات مختلفة لكل شخصية</h1>
+
+  <button onclick="randomize()">اختيار عشوائي بدون تكرار</button>
+
+  <div id="result"></div>
+
+  <script>
+    const flavors = ["حامض", "حار", "حلو"];
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    function randomize() {
+      const shuffled = shuffle([...flavors]); // نسخة shuffled بدون تكرار
+
+      const mohammed = shuffled[0];
+      const mozn = shuffled[1];
+      const elyan = shuffled[2];
+
+      const resultDiv = document.getElementById("result");
+      resultDiv.style.display = "block";
+      resultDiv.innerHTML =
+        "اختيار محمد: " + mohammed + "<br>" +
+        "اختيار مزن: " + mozn + "<br>" +
+        "اختيار اليان: " + elyan;
+    }
+  </script>
+
+</body>
+</html>
